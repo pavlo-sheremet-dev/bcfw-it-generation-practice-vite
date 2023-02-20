@@ -25,6 +25,11 @@ export const Home = () => {
     getCocktails();
   }, []);
 
+  useEffect(() => {
+    if (!error) return;
+    alert(error);
+  }, [error]);
+
   return (
     <>
       <Section>
@@ -32,8 +37,9 @@ export const Home = () => {
           Trending cocktails
         </h1>
 
-        <CocktailsList cocktails={cocktails} />
+        {cocktails.length > 0 && <CocktailsList cocktails={cocktails} />}
       </Section>
+      {loading && <Loader />}
     </>
   );
 };
