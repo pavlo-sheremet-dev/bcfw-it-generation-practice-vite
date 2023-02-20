@@ -1,6 +1,6 @@
-import axios from 'axios';
-const BASE_URL = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
-axios.defaults.baseURL = 'https://www.thecocktaildb.com/api/json/v1/1';
+import axios from "axios";
+const BASE_URL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+axios.defaults.baseURL = "https://www.thecocktaildb.com/api/json/v1/1";
 
 const urls = Array.from({ length: 12 }, () => BASE_URL);
 
@@ -8,7 +8,8 @@ export const getTrendingCocktails = () => {
   return Promise.all(
     urls.map(async (url) => {
       const { data } = await axios.get(url);
-      return data;
+      const { strDrinkThumb, strDrink, strGlass, idDrink } = data.drinks[0];
+      return { strDrinkThumb, strDrink, strGlass, idDrink };
     })
   );
 };
