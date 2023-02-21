@@ -1,34 +1,7 @@
-# Заняття 3. План
+# bcfw-it-generation-practice
 
-- Kahoot
-- Питання-відповідь
-- Практичне заняття
+# Tasks
 
-## Завдання «Cocktail App»
-
-Створи базову маршрутизацію для застосунку пошуку і зберігання коктейлів.
-
-## API TheCocktailDB
-
-Для бекенду використовуй [TheCocktailDB](https://www.thecocktaildb.com/api.php). У цій роботі будуть використовуватися наступні ендпоінти.
-
-- [www.thecocktaildb.com/api/json/v1/1/random.php](www.thecocktaildb.com/api/json/v1/1/random.php) один рандомний коктейль, використовуючи `Promise.all` треба отримати 12 рандомних коктейлів на головну сторінку.
-- [/lookup.php?i=${id}](www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007)
-  запит на повну інформацію по коктейлю.
-- [/search.php?s=${query}](https://restcountries.com/#api-endpoints-v3-name) запит на
-  пошук по імені інгредієнта.
-
-## Маршрути
-
-У застосунку повинні бути такі маршрути. Якщо користувач зайшов за неіснуючим
-маршрутом, його необхідно перенаправляти на домашню сторінку.
-
-- `'/'` - компонент `<Home>`, домашня сторінка з 12 рандомними коктейлями.
-- `'/cocktails'` - компонент `<Cocktails>`, сторінка пошуку коктейлів по інгредієнту.
-- `'/cocktails/:cocktailId'` - компонент `<Country>`, сторінка з детальною
-  інформацією про коктейль
-
-## Програмна навігація
-
-В застосунку повинно бути передбачена кнопка `Повернутись назад`, а також
-редирект при некоректному введенні маршрута
+|    `Lesson`     |                                        `Practice Code`                                        |                                               `Start Files`                                               |
+| :-------------: | :-------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: |
+| **Module - 05** | [Link](https://github.com/pavlo-sheremet-dev/bcfw-it-generation-practice-vite/tree/module-05) | [Link](https://github.com/pavlo-sheremet-dev/bcfw-it-generation-practice-vite/tree/module-05-start-files) |
