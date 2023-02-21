@@ -1,7 +1,0 @@
-.layout {
-  @apply flex h-screen flex-col bg-slate-50;
-}
-
-.main {
-  @apply flex-grow bg-gray-100;
-}
