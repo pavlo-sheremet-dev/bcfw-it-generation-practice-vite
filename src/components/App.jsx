@@ -14,7 +14,7 @@ export const App = () => {
         <Route path={routes.COCKTAILS} element={<Cocktails />} />
         <Route path={routes.COCKTAIL_ID} element={<CocktailDetail />} />
       </Route>
-      <Route path="*" element={<Navigate to={routes.HOME} />} />
+      {/* <Route path="*" element={<Navigate to={routes.HOME} />} /> */}
     </Routes>
   );
 };
