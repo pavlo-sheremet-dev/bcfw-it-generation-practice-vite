@@ -1,39 +1,43 @@
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
-import React from 'react';
-import styles from './Button.module.css';
+import classNames from "classnames";
+import PropTypes from "prop-types";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { updateComment } from "../../redux/operations";
+import styles from "./Button.module.css";
 
-export const Button = ({ children, counter, role = 'thumbsUp', id }) => {
-  const variants = {
-    [styles.thumbsUp]: role === 'thumbsUp',
-    [styles.thumbsDown]: role === 'thumbsDown',
-  };
+export const Button = ({ children, counter, role = "thumbsUp", id }) => {
+	const variants = {
+		[styles.thumbsUp]: role === "thumbsUp",
+		[styles.thumbsDown]: role === "thumbsDown",
+	};
+	const [isThumbUpdated, setIsThumbUpdated] = useState(false);
+	const dispatch = useDispatch();
 
-  const onBtnHandleClick = () => {
-    console.log('click');
-  };
+	const onBtnHandleClick = () => {
+		dispatch(updateComment({ [role]: isThumbUpdated ? counter - 1 : counter + 1, id }));
+		setIsThumbUpdated((prevState) => !prevState);
+	};
 
-  return (
-    <button
-      className={classNames(styles.button, variants)}
-      type='button'
-      counter={counter}
-      onClick={onBtnHandleClick}
-      id={id}
-    >
-      {children}
+	return (
+		<button
+			className={classNames(styles.button, variants)}
+			type="button"
+			counter={counter}
+			onClick={onBtnHandleClick}
+			id={id}>
+			{children}
 
-      <span className={styles.counter}>
-        <span></span>
-        {counter}
-      </span>
-    </button>
-  );
+			<span className={styles.counter}>
+				<span></span>
+				{counter}
+			</span>
+		</button>
+	);
 };
 
 Button.propTypes = {
-  children: PropTypes.node.isRequired,
-  counter: PropTypes.number.isRequired,
-  role: PropTypes.string,
-  id: PropTypes.string.isRequired,
+	children: PropTypes.node.isRequired,
+	counter: PropTypes.number.isRequired,
+	role: PropTypes.string,
+	id: PropTypes.string.isRequired,
 };
