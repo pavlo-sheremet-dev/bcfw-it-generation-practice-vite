@@ -1,0 +1,15 @@
+.search {
+  @apply max-w-md;
+}
+
+.searchWrapper {
+  @apply relative flex items-center w-full border rounded-lg shadow-sm bg-white;
+}
+
+.searchIcon {
+  @apply h-5 w-5 absolute left-3 inset-y-1/2 -translate-y-1/2;
+}
+
+.searchInput {
+  @apply !pl-10 block w-full !rounded-md !border-gray-300 !shadow-sm focus:!border-indigo-300 focus:!ring focus:!ring-indigo-200 focus:!ring-opacity-50 resize-none placeholder:text-sm placeholder:font-light placeholder:text-gray-400;
+}

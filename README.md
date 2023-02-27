@@ -1,7 +1,3 @@
-# bcfw-it-generation-practice
+# React Blended
 
-# Tasks
-
-|    `Lesson`     |                                        `Practice Code`                                        |                                               `Start Files`                                               |
-| :-------------: | :-------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------: |
-| **Module - 05** | [Link](https://github.com/pavlo-sheremet-dev/bcfw-it-generation-practice-vite/tree/module-05) | [Link](https://github.com/pavlo-sheremet-dev/bcfw-it-generation-practice-vite/tree/module-05-start-files) |
+## Lesson-05

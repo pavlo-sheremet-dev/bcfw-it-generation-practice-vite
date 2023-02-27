@@ -1,0 +1,31 @@
+.hero {
+  @apply text-center max-w-xl mx-auto;
+}
+
+.title {
+  @apply text-6xl md:text-7xl font-bold mb-5 text-gray-600;
+}
+
+.subtitle {
+  @apply text-xl mb-5 font-light;
+}
+
+.decorationBox {
+  @apply text-center mb-10;
+}
+
+.decor {
+  @apply inline-block h-1 rounded-full bg-indigo-500 ml-1;
+}
+
+.decorW1 {
+  @apply w-1;
+}
+
+.decorW3 {
+  @apply w-3;
+}
+
+.decorW40 {
+  @apply w-40;
+}

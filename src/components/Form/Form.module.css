@@ -1,0 +1,27 @@
+.formWrapper {
+  @apply max-w-xl mx-auto py-12;
+}
+
+.form {
+  @apply grid grid-cols-1 gap-6;
+}
+
+.label {
+  @apply block;
+}
+
+.labelName {
+  @apply text-gray-500 font-bold;
+}
+
+.input {
+  @apply mt-1 block w-full !rounded-md !border-gray-300 !shadow-sm focus:!border-indigo-300 focus:!ring focus:!ring-indigo-200 focus:!ring-opacity-50 resize-none;
+}
+
+.formBtn {
+  @apply inline-flex items-center justify-center gap-2 px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded-md max-w-[140px] transition-colors shadow h-10 leading-5 tracking-wide text-base;
+}
+
+.icon {
+  @apply w-6 h-6 stroke-slate-300;
+}

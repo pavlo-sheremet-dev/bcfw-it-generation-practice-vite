@@ -1,0 +1,19 @@
+.button {
+  @apply relative !bg-gray-100 text-white p-2 border shadow-sm rounded-full text-sm uppercase font-semibold transition-colors outline outline-offset-0 focus:outline-2 focus:outline-blue-500;
+}
+
+.counter {
+  @apply absolute -top-3 -right-3 px-2 py-0.5 bg-indigo-500 rounded-full text-xs;
+}
+
+.ping {
+  @apply animate-ping absolute top-0 right-0 inline-flex h-full w-full rounded-full bg-sky-400 opacity-75;
+}
+
+.thumbsUp {
+  @apply hover:!bg-green-100 focus:!bg-green-100;
+}
+
+.thumbsDown {
+  @apply hover:!bg-rose-100 focus:!bg-rose-100;
+}

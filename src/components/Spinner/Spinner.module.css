@@ -1,0 +1,15 @@
+.loaderBox {
+  @apply flex space-x-2 animate-pulse;
+}
+
+.loaderDot {
+  @apply w-4 h-4 bg-slate-50 rounded-full;
+}
+
+.regular {
+  @apply w-3.5 h-3.5;
+}
+
+.small {
+  @apply w-2 h-2;
+}
