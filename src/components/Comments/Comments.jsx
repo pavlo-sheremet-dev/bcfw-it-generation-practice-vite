@@ -1,20 +1,32 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useMemo } from "react";
+
 import { Comment } from "../Comment/Comment";
 import { Grid } from "../Grid/Grid";
-// import { comments } from "../../helpers/comments";
+
+import { useGetCommentsQuery } from "../../redux/comments/commentApi";
 import { useSelector } from "react-redux";
-import { selectComments } from "../../redux/selectors";
+import { selectFilter } from "../../redux/filter/selectors";
 
 export const Comments = () => {
-	const comments = useSelector(selectComments);
+  const filterValue = useSelector(selectFilter);
+  const { data: comments } = useGetCommentsQuery();
 
-	if (!comments.length) return;
-	return (
-		<Grid>{comments && comments.map((comment) => <Comment key={comment.id} {...comment} />)}</Grid>
-	);
-};
+  const filteredComments = useMemo(
+    () =>
+      comments?.filter(({ content }) =>
+        content.toLowerCase().includes(filterValue.toLowerCase())
+      ) ?? [],
+    [comments, filterValue]
+  );
 
-Comments.propTypes = {
-	comments: PropTypes.arrayOf(PropTypes.shape().isRequired),
+  if (!filteredComments.length) return;
+
+  return (
+    <Grid>
+      {filteredComments &&
+        filteredComments.map((comment) => (
+          <Comment key={comment.id} {...comment} />
+        ))}
+    </Grid>
+  );
 };

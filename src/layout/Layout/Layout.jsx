@@ -4,18 +4,18 @@ import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 import { Outlet } from "react-router-dom";
 import styles from "./Layout.module.css";
-import { useSelector } from "react-redux";
-import { selectLoading } from "../../redux/selectors";
+
+import { useGetCommentsQuery } from "../../redux/comments/commentApi";
 
 export const Layout = () => {
-	const loading = useSelector(selectLoading);
+  const { isFetching } = useGetCommentsQuery();
 
-	return (
-		<div className={styles.layout}>
-			<Header />
-			<main className={styles.main}>{<Outlet />}</main>
-			<Footer />
-			{loading && <Loader />}
-		</div>
-	);
+  return (
+    <div className={styles.layout}>
+      <Header />
+      <main className={styles.main}>{<Outlet />}</main>
+      <Footer />
+      {isFetching && <Loader />}
+    </div>
+  );
 };
